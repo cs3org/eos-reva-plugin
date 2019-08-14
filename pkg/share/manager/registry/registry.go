@@ -16,18 +16,19 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package impersonator
+package registry
 
-import (
-	"context"
-	"testing"
-)
+import "github.com/cs3org/reva/pkg/share"
 
-func TestImpersonator(t *testing.T) {
-	ctx := context.Background()
-	i, _ := New(nil)
-	_, err := i.Authenticate(ctx, "admin", "pwd")
-	if err != nil {
-		t.Fatal(err)
-	}
+// NewFunc is the function that share managers
+// should register at init time.
+type NewFunc func(map[string]interface{}) (share.Manager, error)
+
+// NewFuncs is a map containing all the registered share managers.
+var NewFuncs = map[string]NewFunc{}
+
+// Register registers a new share manager new function.
+// Not safe for concurrent use. Safe for use from package init.
+func Register(name string, f NewFunc) {
+	NewFuncs[name] = f
 }

@@ -16,18 +16,10 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package impersonator
+package loader
 
 import (
-	"context"
-	"testing"
+	// Load core share manager drivers.
+	_ "github.com/cs3org/reva/pkg/share/manager/memory"
+	// Add your own here
 )
-
-func TestImpersonator(t *testing.T) {
-	ctx := context.Background()
-	i, _ := New(nil)
-	_, err := i.Authenticate(ctx, "admin", "pwd")
-	if err != nil {
-		t.Fatal(err)
-	}
-}
