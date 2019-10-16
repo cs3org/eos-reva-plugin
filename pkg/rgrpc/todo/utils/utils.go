@@ -16,34 +16,20 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package demo
+package utils
 
 import (
-	"context"
-	"testing"
-
-	userproviderv0alphapb "github.com/cs3org/go-cs3apis/cs3/userprovider/v0alpha"
+	typespb "github.com/cs3org/go-cs3apis/cs3/types"
 )
 
-var ctx = context.Background()
-
-func TestEncodeDecode(t *testing.T) {
-	m, _ := New(nil)
-	u := &userproviderv0alphapb.User{
-		Username: "marie",
+// UnixNanoToTS converts a unix nano time to a valid cs3 Timestamp.
+// TODO(labkode): review this code, optimize it?
+func UnixNanoToTS(epoch uint64) *typespb.Timestamp {
+	seconds := epoch / 1000000000
+	nanos := epoch * 1000000000
+	ts := &typespb.Timestamp{
+		Nanos:   uint32(nanos),
+		Seconds: seconds,
 	}
-
-	encoded, err := m.MintToken(ctx, u)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	decodedUser, err := m.DismantleToken(ctx, encoded)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if u.Username != decodedUser.Username {
-		t.Fatalf("mail claims differ: expected=%s got=%s", u.Username, decodedUser.Username)
-	}
+	return ts
 }

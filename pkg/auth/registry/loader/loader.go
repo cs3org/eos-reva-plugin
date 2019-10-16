@@ -16,34 +16,10 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package demo
+package loader
 
 import (
-	"context"
-	"testing"
-
-	userproviderv0alphapb "github.com/cs3org/go-cs3apis/cs3/userprovider/v0alpha"
+	// Load core storage broker drivers.
+	_ "github.com/cs3org/reva/pkg/auth/registry/static"
+	// Add your own here
 )
-
-var ctx = context.Background()
-
-func TestEncodeDecode(t *testing.T) {
-	m, _ := New(nil)
-	u := &userproviderv0alphapb.User{
-		Username: "marie",
-	}
-
-	encoded, err := m.MintToken(ctx, u)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	decodedUser, err := m.DismantleToken(ctx, encoded)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if u.Username != decodedUser.Username {
-		t.Fatalf("mail claims differ: expected=%s got=%s", u.Username, decodedUser.Username)
-	}
-}
