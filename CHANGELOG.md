@@ -1,23 +1,23 @@
-Changelog for Reva unreleased (UNRELEASED)
+Changelog for Reva 0.0.1 (2019-10-24)
 =======================================
 
-The following sections list the changes in Reva unreleased relevant to
+The following sections list the changes in Reva 0.0.1 relevant to
 Reva users. The changes are ordered by importance.
 
 Summary
 -------
 
- * Enh #243: Create reference when accepting a share
+ * Enh #334: Create release procedure for Reva
 
 Details
 -------
 
- * Enhancement #243: Create reference when accepting a share
+ * Enhancement #334: Create release procedure for Reva
 
-   When accepting a share only the state information changed for the share was not merged into the
-   user tree. Now after accepting a share, the share is mounted into the user tree in a location
-   specified by the user.
+   Reva did not have any procedure to release versions. This PR brings a new tool to release Reva
+   versions (tools/release) and prepares the necessary files for artefact distributed made
+   from Drone into Github pages.
 
-   https://github.com/reva/reva/pull/243
+   https://github.com/reva/reva/pull/334
 
 
