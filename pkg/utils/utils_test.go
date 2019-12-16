@@ -16,12 +16,29 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package loader
+package utils
 
-import (
-	// Load core user manager drivers.
-	_ "github.com/cs3org/reva/pkg/user/manager/demo"
-	_ "github.com/cs3org/reva/pkg/user/manager/json"
-	_ "github.com/cs3org/reva/pkg/user/manager/ldap"
-	// Add your own here
-)
+import "testing"
+
+var skipTests = []struct {
+	name string
+	url  string
+	base []string
+	out  bool
+}{
+	{"valid subpath", "/a/b/c/d", []string{"/a/b/"}, true},
+	{"invalid subpath", "/a/b/c", []string{"/a/b/c/d"}, false},
+	{"equal values", "/a/b/c", []string{"/a/b/c"}, true},
+}
+
+func TestSkip(t *testing.T) {
+	for _, tt := range skipTests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			r := Skip(tt.url, tt.base)
+			if r != tt.out {
+				t.Errorf("expected %v, want %v", r, tt.out)
+			}
+		})
+	}
+}

@@ -16,12 +16,17 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package loader
+package utils
 
-import (
-	// Load core user manager drivers.
-	_ "github.com/cs3org/reva/pkg/user/manager/demo"
-	_ "github.com/cs3org/reva/pkg/user/manager/json"
-	_ "github.com/cs3org/reva/pkg/user/manager/ldap"
-	// Add your own here
-)
+import "strings"
+
+// Skip  evaluates whether a source endpoint contains any of the prefixes.
+// i.e: /a/b/c/d/e contains prefix /a/b/c
+func Skip(source string, prefixes []string) bool {
+	for i := range prefixes {
+		if strings.HasPrefix(source, prefixes[i]) {
+			return true
+		}
+	}
+	return false
+}

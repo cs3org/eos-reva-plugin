@@ -16,12 +16,26 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package loader
+package router
 
 import (
-	// Load core user manager drivers.
-	_ "github.com/cs3org/reva/pkg/user/manager/demo"
-	_ "github.com/cs3org/reva/pkg/user/manager/json"
-	_ "github.com/cs3org/reva/pkg/user/manager/ldap"
-	// Add your own here
+	"path"
+	"strings"
 )
+
+// ShiftPath splits off the first component of p, which will be cleaned of
+// relative components before processing. head will never contain a slash and
+// tail will always be a rooted path without trailing slash.
+// see https://blog.merovius.de/2017/06/18/how-not-to-use-an-http-router.html
+// and https://gist.github.com/weatherglass/62bd8a704d4dfdc608fe5c5cb5a6980c#gistcomment-2161690 for the zero alloc code below
+func ShiftPath(p string) (head, tail string) {
+	if p == "" {
+		return "", "/"
+	}
+	p = strings.TrimPrefix(path.Clean(p), "/")
+	i := strings.Index(p, "/")
+	if i < 0 {
+		return p, "/"
+	}
+	return p[:i], p[i:]
+}
