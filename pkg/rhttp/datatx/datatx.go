@@ -16,16 +16,17 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package s3
+// Package datatx provides a library to abstract the complexity
+// of using various data transfer protocols.
+package datatx
 
 import (
-	"context"
+	"net/http"
 
-	provider "github.com/cs3org/go-cs3apis/cs3/storage/provider/v1beta1"
-	"github.com/cs3org/reva/pkg/errtypes"
+	"github.com/cs3org/reva/pkg/storage"
 )
 
-// InitiateUpload returns upload ids corresponding to different protocols it supports
-func (fs *s3FS) InitiateUpload(ctx context.Context, ref *provider.Reference, uploadLength int64, metadata map[string]string) (map[string]string, error) {
-	return nil, errtypes.NotSupported("op not supported")
+// DataTX provides an abstraction around various data transfer protocols.
+type DataTX interface {
+	Handler(fs storage.FS) (http.Handler, error)
 }
