@@ -16,20 +16,32 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package net
+package ctx
 
 import (
-	"github.com/cs3org/reva/internal/http/services/datagateway"
-	ctxpkg "github.com/cs3org/reva/pkg/ctx"
+	"context"
 )
 
-type ctxKey int
+// TokenHeader is the header to be used across grpc and http services
+// to forward the access token.
+const TokenHeader = "x-access-token"
 
-const (
-	// AccessTokenIndex specifies the index of the Reva access token in a context.
-	AccessTokenIndex ctxKey = iota
-	// AccessTokenName specifies the name of the Reva access token used during requests.
-	AccessTokenName = ctxpkg.TokenHeader
-	// TransportTokenName specifies the name of the Reva transport token used during data transfers.
-	TransportTokenName = datagateway.TokenTransportHeader
-)
+// ContextGetToken returns the token if set in the given context.
+func ContextGetToken(ctx context.Context) (string, bool) {
+	u, ok := ctx.Value(tokenKey).(string)
+	return u, ok
+}
+
+// ContextMustGetToken panics if token is not in context.
+func ContextMustGetToken(ctx context.Context) string {
+	u, ok := ContextGetToken(ctx)
+	if !ok {
+		panic("token not found in context")
+	}
+	return u
+}
+
+// ContextSetToken stores the token in the context.
+func ContextSetToken(ctx context.Context, t string) context.Context {
+	return context.WithValue(ctx, tokenKey, t)
+}
