@@ -16,16 +16,18 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package node_test
+package user
 
-import (
-	"testing"
+import userpb "github.com/cs3org/go-cs3apis/cs3/identity/user/v1beta1"
 
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-)
-
-func TestNode(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "Node Suite")
+// HasUploaderRole returns true if the user has uploader role.
+func HasUploaderRole(user *userpb.User) bool {
+	if user.Opaque == nil {
+		return false
+	}
+	publicShare, ok := user.Opaque.Map["public-share-role"]
+	if !ok {
+		return false
+	}
+	return string(publicShare.Value) == "uploader"
 }
