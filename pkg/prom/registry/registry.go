@@ -16,20 +16,23 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package net
+package registry
 
 import (
-	"github.com/cs3org/reva/internal/http/services/datagateway"
-	"github.com/cs3org/reva/pkg/appctx"
+	"context"
+
+	"github.com/prometheus/client_golang/prometheus"
 )
 
-type ctxKey int
+// NewFunc is the function that custom prometheus collectors implement
+// should register at init time.
+type NewFunc func(context.Context, map[string]interface{}) ([]prometheus.Collector, error)
 
-const (
-	// AccessTokenIndex specifies the index of the Reva access token in a context.
-	AccessTokenIndex ctxKey = iota
-	// AccessTokenName specifies the name of the Reva access token used during requests.
-	AccessTokenName = appctx.TokenHeader
-	// TransportTokenName specifies the name of the Reva transport token used during data transfers.
-	TransportTokenName = datagateway.TokenTransportHeader
-)
+// NewFuncs is a map containing all the registered collectors.
+var NewFuncs = map[string]NewFunc{}
+
+// Register registers a new prometheus collector new function.
+// Not safe for concurrent use. Safe for use from package init.
+func Register(name string, f NewFunc) {
+	NewFuncs[name] = f
+}

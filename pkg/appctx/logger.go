@@ -16,22 +16,21 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package ctx
+package appctx
 
 import (
 	"context"
+
+	"github.com/rs/zerolog"
 )
 
-// ResoucePathCtx is the key used in the opaque id for passing the resource path.
-const ResoucePathCtx = "resource_path"
-
-// ContextGetResourcePath returns the resource path if set in the given context.
-func ContextGetResourcePath(ctx context.Context) (string, bool) {
-	p, ok := ctx.Value(pathKey).(string)
-	return p, ok
+// WithLogger returns a context with an associated logger.
+func WithLogger(ctx context.Context, l *zerolog.Logger) context.Context {
+	return l.WithContext(ctx)
 }
 
-// ContextGetResourcePath stores the resource path in the context.
-func ContextSetResourcePath(ctx context.Context, path string) context.Context {
-	return context.WithValue(ctx, pathKey, path)
+// GetLogger returns the logger associated with the given context
+// or a disabled logger in case no logger is stored inside the context.
+func GetLogger(ctx context.Context) *zerolog.Logger {
+	return zerolog.Ctx(ctx)
 }

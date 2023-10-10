@@ -16,16 +16,12 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package s3
+package loader
 
 import (
-	"context"
-
-	provider "github.com/cs3org/go-cs3apis/cs3/storage/provider/v1beta1"
-	"github.com/cs3org/reva/pkg/errtypes"
+	// Load collectors.
+	_ "github.com/cs3org/reva/internal/grpc/interceptors/metrics"
+	_ "github.com/cs3org/reva/internal/http/interceptors/metrics"
+	_ "github.com/cs3org/reva/pkg/prom/base"
+	// Add your own here.
 )
-
-// InitiateUpload returns upload ids corresponding to different protocols it supports.
-func (fs *s3FS) InitiateUpload(ctx context.Context, ref *provider.Reference, uploadLength int64, metadata map[string]string) (map[string]string, error) {
-	return nil, errtypes.NotSupported("op not supported")
-}

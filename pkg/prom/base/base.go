@@ -16,20 +16,24 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 
-package net
+package base
 
 import (
-	"github.com/cs3org/reva/internal/http/services/datagateway"
-	"github.com/cs3org/reva/pkg/appctx"
+	"context"
+
+	"github.com/cs3org/reva/pkg/prom/registry"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/collectors"
 )
 
-type ctxKey int
+func init() {
+	registry.Register("base", New)
+}
 
-const (
-	// AccessTokenIndex specifies the index of the Reva access token in a context.
-	AccessTokenIndex ctxKey = iota
-	// AccessTokenName specifies the name of the Reva access token used during requests.
-	AccessTokenName = appctx.TokenHeader
-	// TransportTokenName specifies the name of the Reva transport token used during data transfers.
-	TransportTokenName = datagateway.TokenTransportHeader
-)
+// New returns a prometheus collector.
+func New(_ context.Context, m map[string]interface{}) ([]prometheus.Collector, error) {
+	return []prometheus.Collector{
+		collectors.NewBuildInfoCollector(),
+		collectors.NewGoCollector(),
+		collectors.NewProcessCollector(collectors.ProcessCollectorOpts{})}, nil
+}
