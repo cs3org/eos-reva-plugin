@@ -1,7 +1,6 @@
 module github.com/cs3org/reva
 
 require (
-	bou.ke/monkey v1.0.2
 	github.com/BurntSushi/toml v1.3.2
 	github.com/CiscoM31/godata v1.0.8
 	github.com/Masterminds/sprig v2.22.0+incompatible
@@ -30,7 +29,6 @@ require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang/protobuf v1.5.4
 	github.com/gomodule/redigo v1.9.2
-	github.com/google/go-cmp v0.6.0
 	github.com/google/uuid v1.6.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus v1.0.0
@@ -41,7 +39,7 @@ require (
 	github.com/maxymania/go-system v0.0.0-20170110133659-647cc364bf0b
 	github.com/mileusna/useragent v1.3.4
 	github.com/mitchellh/mapstructure v1.5.0
-	github.com/nats-io/nats.go v1.33.1
+	github.com/nats-io/nats.go v1.37.0
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.30.0
 	github.com/owncloud/libre-graph-api-go v1.0.5-0.20240425090020-dba6d1507c38
@@ -80,7 +78,6 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f // indirect
-	github.com/cern-eos/go-eosgrpc v0.0.0-20240812132646-f105d2304f38 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -97,6 +94,7 @@ require (
 	github.com/gocraft/dbr/v2 v2.7.2 // indirect
 	github.com/golang/glog v1.2.1 // indirect
 	github.com/google/flatbuffers v2.0.8+incompatible // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0 // indirect
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
