@@ -1,8 +1,12 @@
 module github.com/cs3org/reva
 
 require (
+<<<<<<< HEAD
 	github.com/BurntSushi/toml v1.3.2
 	github.com/CiscoM31/godata v1.0.8
+=======
+	github.com/BurntSushi/toml v1.4.0
+>>>>>>> d83bee67 ([Build-deps]: Bump github.com/BurntSushi/toml from 1.3.2 to 1.4.0)
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/ReneKroon/ttlcache/v2 v2.11.0
 	github.com/beevik/etree v1.3.0
