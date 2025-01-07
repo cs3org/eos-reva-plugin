@@ -2,11 +2,16 @@ module github.com/cs3org/reva
 
 require (
 <<<<<<< HEAD
+<<<<<<< HEAD
 	github.com/BurntSushi/toml v1.3.2
 	github.com/CiscoM31/godata v1.0.8
 =======
 	github.com/BurntSushi/toml v1.4.0
 >>>>>>> d83bee67 ([Build-deps]: Bump github.com/BurntSushi/toml from 1.3.2 to 1.4.0)
+=======
+	github.com/BurntSushi/toml v1.4.0
+	github.com/CiscoM31/godata v1.0.8
+>>>>>>> 2ea83ba5 (Re-updated go.mod)
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/ReneKroon/ttlcache/v2 v2.11.0
 	github.com/beevik/etree v1.4.1
@@ -97,7 +102,6 @@ require (
 	github.com/go-openapi/strfmt v0.23.0 // indirect
 	github.com/gocraft/dbr/v2 v2.7.2 // indirect
 	github.com/google/flatbuffers v2.0.8+incompatible // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.2.0 // indirect
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
