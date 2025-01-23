@@ -14,6 +14,7 @@ require (
 >>>>>>> 2ea83ba5 (Re-updated go.mod)
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/ReneKroon/ttlcache/v2 v2.11.0
+	github.com/alitto/pond v1.9.2
 	github.com/beevik/etree v1.4.1
 	github.com/bluele/gcache v0.0.2
 	github.com/c-bata/go-prompt v0.2.6
@@ -51,11 +52,16 @@ require (
 	github.com/nats-io/nats.go v1.37.0
 	github.com/onsi/ginkgo v1.16.5
 <<<<<<< HEAD
+<<<<<<< HEAD
 	github.com/onsi/gomega v1.30.0
 	github.com/owncloud/libre-graph-api-go v1.0.5-0.20240425090020-dba6d1507c38
 =======
 	github.com/onsi/gomega v1.36.2
 >>>>>>> ce4122ad ([Build-deps]: Bump github.com/onsi/gomega from 1.30.0 to 1.36.2 (#5021))
+=======
+	github.com/onsi/gomega v1.36.2
+	github.com/owncloud/libre-graph-api-go v1.0.5-0.20240425090020-dba6d1507c38
+>>>>>>> bd278bc1 (Error handling in ListExisting(Received)Shares)
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.20.5
 	github.com/rs/cors v1.11.1
@@ -86,8 +92,12 @@ require (
 	github.com/Azure/go-ntlmssp v0.0.0-20221128193559-754e69321358 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
+<<<<<<< HEAD
 	github.com/alitto/pond v1.8.3
 	github.com/armon/go-metrics v0.4.1 // indirect
+=======
+	github.com/alitto/pond/v2 v2.1.6
+>>>>>>> bd278bc1 (Error handling in ListExisting(Received)Shares)
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f // indirect
