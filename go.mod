@@ -81,10 +81,14 @@ require (
 	golang.org/x/term v0.28.0
 	google.golang.org/genproto v0.0.0-20241209162323-e6fa225c2576
 <<<<<<< HEAD
+<<<<<<< HEAD
 	google.golang.org/grpc v1.69.4
 =======
 	google.golang.org/grpc v1.69.2
 >>>>>>> 524ed4ce ([Build-deps]: Bump google.golang.org/protobuf from 1.36.1 to 1.36.4 (#5053))
+=======
+	google.golang.org/grpc v1.69.4
+>>>>>>> 86dbb7c4 ([Build-deps]: Bump go.step.sm/crypto from 0.55.0 to 0.57.0 (#5048))
 	google.golang.org/protobuf v1.36.4
 	gotest.tools v2.2.0+incompatible
 )
