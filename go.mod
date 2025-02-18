@@ -75,8 +75,13 @@ require (
 	go.opencensus.io v0.24.0
 	go.step.sm/crypto v0.57.0
 	golang.org/x/crypto v0.32.0
+<<<<<<< HEAD
 	golang.org/x/oauth2 v0.25.0
 	golang.org/x/sync v0.11.0
+=======
+	golang.org/x/oauth2 v0.26.0
+	golang.org/x/sync v0.10.0
+>>>>>>> 238bc611 ([Build-deps]: Bump golang.org/x/oauth2 from 0.25.0 to 0.26.0 (#5073))
 	golang.org/x/sys v0.29.0
 	golang.org/x/term v0.28.0
 	google.golang.org/genproto v0.0.0-20241209162323-e6fa225c2576
