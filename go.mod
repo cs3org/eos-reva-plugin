@@ -14,7 +14,6 @@ require (
 >>>>>>> 2ea83ba5 (Re-updated go.mod)
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/ReneKroon/ttlcache/v2 v2.11.0
-	github.com/alitto/pond v1.9.2
 	github.com/beevik/etree v1.4.1
 	github.com/bluele/gcache v0.0.2
 	github.com/c-bata/go-prompt v0.2.6
@@ -80,8 +79,12 @@ require (
 	golang.org/x/sync v0.11.0
 =======
 	golang.org/x/oauth2 v0.26.0
+<<<<<<< HEAD
 	golang.org/x/sync v0.10.0
 >>>>>>> 238bc611 ([Build-deps]: Bump golang.org/x/oauth2 from 0.25.0 to 0.26.0 (#5073))
+=======
+	golang.org/x/sync v0.11.0
+>>>>>>> e76dbd2a (go mod tidy)
 	golang.org/x/sys v0.29.0
 	golang.org/x/term v0.28.0
 	google.golang.org/genproto v0.0.0-20241209162323-e6fa225c2576
@@ -95,6 +98,9 @@ require (
 	google.golang.org/grpc v1.69.4
 >>>>>>> 86dbb7c4 ([Build-deps]: Bump go.step.sm/crypto from 0.55.0 to 0.57.0 (#5048))
 	google.golang.org/protobuf v1.36.4
+	gorm.io/driver/mysql v1.5.7
+	gorm.io/driver/sqlite v1.5.7
+	gorm.io/gorm v1.25.12
 	gotest.tools v2.2.0+incompatible
 )
 
@@ -102,9 +108,6 @@ require (
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
-	gorm.io/driver/mysql v1.5.7 // indirect
-	gorm.io/driver/sqlite v1.5.7 // indirect
-	gorm.io/gorm v1.25.12 // indirect
 )
 
 require (
