@@ -80,11 +80,15 @@ require (
 =======
 	golang.org/x/oauth2 v0.26.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	golang.org/x/sync v0.10.0
 >>>>>>> 238bc611 ([Build-deps]: Bump golang.org/x/oauth2 from 0.25.0 to 0.26.0 (#5073))
 =======
 	golang.org/x/sync v0.11.0
 >>>>>>> e76dbd2a (go mod tidy)
+=======
+	golang.org/x/sync v0.11.0
+>>>>>>> 38e3c7b3 ([Build-deps]: Bump golang.org/x/sync from 0.10.0 to 0.11.0 (#5088))
 	golang.org/x/sys v0.29.0
 	golang.org/x/term v0.28.0
 	google.golang.org/genproto v0.0.0-20241209162323-e6fa225c2576
