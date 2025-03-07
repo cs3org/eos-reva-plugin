@@ -94,6 +94,7 @@ require (
 	google.golang.org/genproto v0.0.0-20241209162323-e6fa225c2576
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	google.golang.org/grpc v1.69.4
 =======
 	google.golang.org/grpc v1.69.2
@@ -101,6 +102,9 @@ require (
 =======
 	google.golang.org/grpc v1.69.4
 >>>>>>> 86dbb7c4 ([Build-deps]: Bump go.step.sm/crypto from 0.55.0 to 0.57.0 (#5048))
+=======
+	google.golang.org/grpc v1.70.0
+>>>>>>> 4c16a710 ([Build-deps]: Bump google.golang.org/grpc from 1.69.4 to 1.70.0 (#5058))
 	google.golang.org/protobuf v1.36.4
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/driver/sqlite v1.5.7
@@ -174,8 +178,8 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
 	go.mongodb.org/mongo-driver v1.17.1 // indirect
-	go.opentelemetry.io/otel v1.31.0 // indirect
-	go.opentelemetry.io/otel/trace v1.31.0 // indirect
+	go.opentelemetry.io/otel v1.32.0 // indirect
+	go.opentelemetry.io/otel/trace v1.32.0 // indirect
 	golang.org/x/mod v0.22.0 // indirect
 	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
