@@ -104,11 +104,15 @@ require (
 >>>>>>> 86dbb7c4 ([Build-deps]: Bump go.step.sm/crypto from 0.55.0 to 0.57.0 (#5048))
 =======
 	google.golang.org/grpc v1.70.0
+<<<<<<< HEAD
 >>>>>>> 4c16a710 ([Build-deps]: Bump google.golang.org/grpc from 1.69.4 to 1.70.0 (#5058))
 	google.golang.org/protobuf v1.36.4
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/driver/sqlite v1.5.7
 	gorm.io/gorm v1.25.12
+=======
+	google.golang.org/protobuf v1.36.5
+>>>>>>> 35e38b7c ([Build-deps]: Bump google.golang.org/protobuf from 1.36.4 to 1.36.5 (#5086))
 	gotest.tools v2.2.0+incompatible
 )
 
