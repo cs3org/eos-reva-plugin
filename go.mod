@@ -95,6 +95,7 @@ require (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	google.golang.org/grpc v1.69.4
 =======
 	google.golang.org/grpc v1.69.2
@@ -111,6 +112,9 @@ require (
 	gorm.io/driver/sqlite v1.5.7
 	gorm.io/gorm v1.25.12
 =======
+=======
+	google.golang.org/grpc v1.71.0
+>>>>>>> b53bc400 ([Build-deps]: Bump google.golang.org/grpc from 1.70.0 to 1.71.0 (#5116))
 	google.golang.org/protobuf v1.36.5
 >>>>>>> 35e38b7c ([Build-deps]: Bump google.golang.org/protobuf from 1.36.4 to 1.36.5 (#5086))
 	gotest.tools v2.2.0+incompatible
@@ -182,13 +186,13 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
 	go.mongodb.org/mongo-driver v1.17.1 // indirect
-	go.opentelemetry.io/otel v1.32.0 // indirect
-	go.opentelemetry.io/otel/trace v1.32.0 // indirect
+	go.opentelemetry.io/otel v1.34.0 // indirect
+	go.opentelemetry.io/otel/trace v1.34.0 // indirect
 	golang.org/x/mod v0.22.0 // indirect
 	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/tools v0.28.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250102185135-69823020774d // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250115164207-1a7da9e5054f // indirect
 	gopkg.in/src-d/go-errors.v1 v1.0.0 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
