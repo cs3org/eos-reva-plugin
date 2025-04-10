@@ -9,7 +9,7 @@ is a nice guide emphasizing that not all contributions need to be code.
 We also have a [Code of Conduct](https://github.com/cs3org/.github/tree/master/CODE_OF_CONDUCT.md)
 that is worth reading!
 
-Please **[open an issue first](https://github.com/cs3org/reva/issues/new)** for any bug report or new feature if there isn't
+Please **[open an issue first](https://github.com/cs3org/eos-reva-plugin/issues/new)** for any bug report or new feature if there isn't
 already one opened. We use GitHub issues to keep track of failures in the
 software and addition of new features. A GitHub issue is a nice place to discuss ideas
 and get feedback from other members of the project.
@@ -18,10 +18,10 @@ If you have general questions or you want guidance on how to start contributing
 you can reach us on [Gitter](https://gitter.im/cs3org/REVA).
 
 If you want to find an area that currently needs improving have a look at the
-open issues listed at the [issues page](https://github.com/cs3org/reva/issues). 
+open issues listed at the [issues page](https://github.com/cs3org/eos-reva-plugins/issues). 
 
 For newcomers, issues with minor complexity are tagged 
-as [junior jobs](https://github.com/cs3org/reva/labels/junior-job).
+as [junior jobs](https://github.com/cs3org/eos-reva-plugins/labels/junior-job).
 
 
 Reporting Bugs
@@ -32,8 +32,9 @@ It is a good idea to describe in detail how to reproduce
 the bug (when you know how), what environment the bug appeared and so on.
 Please tell us at least the following things:
 
- * What's the version of binary you used? Please include the output of
+ * What's the version of the revad binary you used? Please include the output of
    `revad --version` or `reva version` in your bug report.
+ * What's the version of the plugin you used?
  * What commands did you execute to get to where the bug occurred?
  * What did you expect?
  * What happened instead?
@@ -47,7 +48,7 @@ Development Environment
 The repository contains several sets of directories with code: `cmd/` and
 `pkg/` contain the main source code files.
 
-The dependencies of REVA are kept in the `go.mod` file in the root of the repository.
+The dependencies of the plugin are kept in the `go.mod` file in the root of the repository.
 In general we don't like to add new dependencies to the project and we try to stick as much
 as possible to the standard Go library. In cases this is not convenient, we accept only 
 external libraries that have a permissive license.
@@ -117,10 +118,6 @@ open up a pull request for each.
 We enforce the Go style guide. You can run `make lint` to fix formatting
 and discover issues related with code style.
 
-Every time you create a pull request, we'll run differents tests on Travis.
-We won't merge any code that doesn't pass the tests. If you need help to make the test
-pass don't hesitate to call for help! Having a PR with failing tests is nothing
-to be ashamed of, in the other hand, that happens regularly for all of us.
 
 Git Commits
 -----------
@@ -139,9 +136,9 @@ make several smaller commits. This is much easier to review. Using `git add -p`
 allows staging and committing only some changes.
 
 
-For example, if your work is done on the reva daemon, prefix the commit
-message with `revad: my message`, if you work on the cli prefix it with `reva: my message`,
-if you work only on the package directory, prefix it with `pkg/pkgname: my message` and so on.
+For example, if your work is done on the fs interface, prefix the commit
+message with `fs: my message`, if you work on the client prefix it with 
+`client: my message`, and so on.
 
 Code Review
 ===========

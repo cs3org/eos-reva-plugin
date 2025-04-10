@@ -1,4 +1,4 @@
-// Copyright 2018-2024 CERN
+// Copyright 2018-2025 CERN
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ import (
 	"time"
 
 	erpc "github.com/cern-eos/go-eosgrpc"
+	"github.com/cs3org/eos-reva-plugin/pkg/eosclient"
 	"github.com/cs3org/reva/pkg/appctx"
-	"github.com/cs3org/reva/pkg/eosclient"
 	"github.com/cs3org/reva/pkg/errtypes"
 	"github.com/cs3org/reva/pkg/storage/utils/acl"
 	"github.com/cs3org/reva/pkg/utils"
@@ -244,7 +244,7 @@ func (c *Client) initNSRequest(ctx context.Context, auth eosclient.Authorization
 		// cbox is a sudo'er, so we become the user specified in UID/GID, if it is set
 		rq.Authkey = c.opt.Authkey
 
-		uid, gid, err := utils.ExtractUidGid(auth)
+		uid, gid, err := eosclient.ExtractUidGid(auth)
 		if err == nil {
 			rq.Role.Uid = uid
 			rq.Role.Gid = gid
@@ -278,7 +278,7 @@ func (c *Client) initMDRequest(ctx context.Context, auth eosclient.Authorization
 		// cbox is a sudo'er, so we become the user specified in UID/GID, if it is set
 		rq.Authkey = c.opt.Authkey
 
-		uid, gid, err := utils.ExtractUidGid(auth)
+		uid, gid, err := eosclient.ExtractUidGid(auth)
 		if err == nil {
 			rq.Role.Uid = uid
 			rq.Role.Gid = gid
@@ -734,7 +734,7 @@ func (c *Client) GetFileInfoByPath(ctx context.Context, userAuth eosclient.Autho
 	// UserAuth may not be sufficient, because the user may not have access to the file
 	// e.g. in the case of a guest account. So we check if a uid/gid is set, and if not,
 	// revert to the daemon account
-	auth := utils.GetUserOrDaemonAuth(userAuth)
+	auth := eosclient.GetUserOrDaemonAuth(userAuth)
 
 	// Initialize the common fields of the MDReq
 	mdrq, err := c.initMDRequest(ctx, auth)
@@ -973,7 +973,7 @@ func (c *Client) Chown(ctx context.Context, auth, chownAuth eosclient.Authorizat
 	msg := new(erpc.NSRequest_ChownRequest)
 	msg.Owner = new(erpc.RoleId)
 
-	uid, gid, err := utils.ExtractUidGid(chownAuth)
+	uid, gid, err := eosclient.ExtractUidGid(chownAuth)
 	if err == nil {
 		msg.Owner.Uid = uid
 		msg.Owner.Gid = gid
@@ -1221,7 +1221,7 @@ func (c *Client) List(ctx context.Context, auth eosclient.Authorization, dpath s
 
 	fdrq.Role = new(erpc.RoleId)
 
-	uid, gid, err := utils.ExtractUidGid(auth)
+	uid, gid, err := eosclient.ExtractUidGid(auth)
 	if err == nil {
 		fdrq.Role.Uid = uid
 		fdrq.Role.Gid = gid

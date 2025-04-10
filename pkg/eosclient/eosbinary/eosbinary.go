@@ -32,9 +32,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/cs3org/eos-reva-plugin/pkg/eosclient"
 	"github.com/cs3org/reva/pkg/appctx"
 
-	"github.com/cs3org/reva/pkg/eosclient"
 	"github.com/cs3org/reva/pkg/errtypes"
 	"github.com/cs3org/reva/pkg/storage/utils/acl"
 	"github.com/cs3org/reva/pkg/trace"

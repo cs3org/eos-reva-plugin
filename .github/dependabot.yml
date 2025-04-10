@@ -8,6 +8,6 @@ updates:
     prefix: "[Build-deps]"
   open-pull-requests-limit: 10
   reviewers:
-  - labkode
   - glpatcern
-  - gmgigi96
+  - diocas
+  - jessegeens
