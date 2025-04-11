@@ -1,0 +1,9 @@
+- Alex Unger <zyxancf@gmail.com>
+- Daniel Mueller <daniel.mueller@uni-muenster.de>
+- Diogo Castro <diogo.castro@cern.ch>
+- Gianmaria Del Monte <g.macmount@gmail.com>
+- Giuseppe Lo Presti <giuseppe.lopresti@cern.ch>
+- Hugo Gonzalez Labrador <github@hugo.labkode.com>
+- Ishank Arora <ishank011@gmail.com>
+- Jesse Geens <jesse.geens@cern.ch>
+- Jörn Friedrich Dreyer <jfd@butonic.de>
