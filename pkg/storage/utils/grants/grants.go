@@ -20,33 +20,20 @@ package grants
 
 import (
 	"errors"
-	"reflect"
 	"strings"
 
 	provider "github.com/cs3org/go-cs3apis/cs3/storage/provider/v1beta1"
 	"github.com/cs3org/reva/pkg/storage/utils/acl"
-<<<<<<< HEAD
-=======
 	"google.golang.org/protobuf/proto"
->>>>>>> c1a3d145 (Refactor of CI (#4797))
 )
 
-<<<<<<< HEAD
-var noPermissions = &provider.ResourcePermissions{}
-
 // GetACLPerm generates a string representation of CS3APIs' ResourcePermissions
-=======
 // GetACLPerm generates a string representation of CS3APIs' ResourcePermissions,
 // modeled after the EOS ACLs.
->>>>>>> baca279f (Fixed permission mapping to EOS ACLs (#4667))
 // TODO(labkode): fine grained permission controls.
 func GetACLPerm(set *provider.ResourcePermissions) (string, error) {
 	// resource permission is denied
-<<<<<<< HEAD
-	if reflect.DeepEqual(noPermissions, set) {
-=======
 	if proto.Equal(&provider.ResourcePermissions{}, set) {
->>>>>>> c1a3d145 (Refactor of CI (#4797))
 		return "!r!w!x!m!u!d", nil
 	}
 
@@ -143,18 +130,10 @@ func GetGranteeType(aclType string) provider.GranteeType {
 
 // PermissionsEqual returns true if the permissions are equal.
 func PermissionsEqual(p1, p2 *provider.ResourcePermissions) bool {
-<<<<<<< HEAD
-	return p1 != nil && p2 != nil && reflect.DeepEqual(p1, p2)
-=======
 	return p1 != nil && p2 != nil && proto.Equal(p1, p2)
->>>>>>> c1a3d145 (Refactor of CI (#4797))
 }
 
 // GranteeEqual returns true if the grantee are equal.
 func GranteeEqual(g1, g2 *provider.Grantee) bool {
-<<<<<<< HEAD
-	return g1 != nil && g2 != nil && reflect.DeepEqual(g1, g2)
-=======
 	return g1 != nil && g2 != nil && proto.Equal(g1, g2)
->>>>>>> c1a3d145 (Refactor of CI (#4797))
 }

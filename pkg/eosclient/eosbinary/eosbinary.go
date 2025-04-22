@@ -923,10 +923,8 @@ func parseRecycleEntry(raw string) (*eosclient.DeletedEntry, error) {
 	if err != nil {
 		return nil, err
 	}
-	isDir := false
-	if kv["type"] == "recursive-dir" {
-		isDir = true
-	}
+	isDir := kv["type"] == "recursive-dir"
+
 	deletionMTime, err := strconv.ParseUint(strings.Split(kv["deletion-time"], ".")[0], 10, 64)
 	if err != nil {
 		return nil, err
@@ -1122,13 +1120,13 @@ func (c *Client) parseFileInfo(ctx context.Context, raw string) (*eosclient.File
 		partsByEqual := strings.SplitN(p, "=", 2) // we have kv pairs like [size 14]
 		if len(partsByEqual) == 2 {
 			// handle xattrn and xattrv special cases
-			switch {
-			case partsByEqual[0] == "xattrn":
+			switch partsByEqual[0] {
+			case "xattrn":
 				previousXAttr = partsByEqual[1]
 				if previousXAttr != "user.acl" {
 					previousXAttr = strings.Replace(previousXAttr, "user.", "", 1)
 				}
-			case partsByEqual[0] == "xattrv":
+			case "xattrv":
 				attrs[previousXAttr] = strings.ToValidUTF8(partsByEqual[1], "")
 				previousXAttr = ""
 			default:
