@@ -1056,11 +1056,7 @@ func (c *Client) CreateDir(ctx context.Context, auth eosclient.Authorization, pa
 	msg := new(erpc.NSRequest_MkdirRequest)
 
 	// Let's put 750 as permissions, assuming that EOS will apply some mask
-	md, err := strconv.ParseUint("750", 8, 64)
-	if err != nil {
-		return err
-	}
-	msg.Mode = int64(md)
+	msg.Mode = 0750
 	msg.Recursive = true
 	msg.Id = new(erpc.MDId)
 	msg.Id.Path = []byte(path)
